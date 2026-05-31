@@ -1,7 +1,5 @@
 # CISC-vs-RISC
 
----
-
 ## 1. Yêu cầu cụ thể
 
 ### 1.1. Giới thiệu khái niệm cơ bản về CISC (Complex Instruction Set Computer) và RISC (Reduced Instruction Set Computer)
@@ -15,8 +13,6 @@ Thời gian thực thi CPU = Số lượng lệnh x CPI (Cycles Per Instruction)
 - Kiến trúc CISC (Complex Instruction Set Computer): CISC là triết lý thiết kế thống trị trong giai đoạn đầu của ngành công nghiệp máy tính (1970 - 1980). Triết lý cốt lõi của CISC là dịch chuyển độ phức tạp từ phần mềm xuống phần cứng. Mục tiêu của CISC là thực hiện các tác vụ lớn chỉ bằng một vài lệnh phức tạp ở cấp độ ngôn ngữ máy. Một lệnh CISC duy nhất có thể tích hợp nhiều hành động phức tạp như: tải dữ liệu từ bộ nhớ RAM, thực hiện phép toán số học/logic, và lưu kết quả trở lại bộ nhớ. Để thực thi được các lệnh có độ dài biến đổi và cấu trúc phức tạp này, phần cứng CPU bắt buộc phải trang bị một khối điều khiển vi chương trình nội bộ (Microcode Control Unit). Khối này có nhiệm vụ phân rã các lệnh vĩ mô (Macro-instructions) thành các chuỗi vi lệnh (Micro-operations) nhỏ hơn để mạch phần cứng có thể xử lý trực tiếp.
 
 - Kiến trúc RISC (Reduced Instruction Set Computer): RISC (1980) ra đời từ các dự án nghiên cứu đột phá tại IBM, UC Berkeley và Đại học Stanford, nhằm giải quyết sự cồng kềnh và kém hiệu quả của CISC. Triết lý cốt lõi của RISC ngược lại hoàn toàn: giữ cho phần cứng càng đơn giản càng tốt và chuyển gánh nặng tối ưu hóa sang cho trình biên dịch (phần mềm). Tập lệnh của RISC bao gồm các lệnh đơn giản, có kích thước cố định (thường là 32-bit hoặc 64-bit) và hầu hết đều được thiết kế để thực thi trong một chu kỳ xung nhịp duy nhất. RISC loại bỏ hoàn toàn việc cho phép các lệnh toán học tương tác trực tiếp với bộ nhớ. Thay vào đó, nó áp dụng mô hình Load/Store nghiêm ngặt: chỉ có lệnh Load (nạp) và Store (lưu) được phép truy cập bộ nhớ RAM; tất cả các phép toán số học và logic khác bắt buộc phải thực hiện trực tiếp trên các thanh ghi đa năng (General-Purpose Registers). Mạch điều khiển của RISC được thiết kế theo dạng mạch nối cứng (Hardwired Control), giúp loại bỏ hoàn toàn tầng vi chương trình (Microcode) chậm chạp.
-
----
 
 ### 1.2. Trình bày ưu điểm và nhược điểm của từng loại kiến trúc
 
@@ -36,8 +32,6 @@ Thời gian thực thi CPU = Số lượng lệnh x CPI (Cycles Per Instruction)
       
     - Nhược điểm: Kích thước chương trình lớn (Code Density thấp):Để thực hiện cùng một tác vụ phức tạp, trình biên dịch trên kiến trúc RISC phải phân rã thành một chuỗi gồm nhiều lệnh đơn giản, khiến kích thước file thực thi lớn hơn đáng kể so với CISC.
     - Áp lực nặng lên trình biên dịch:Trình biên dịch phải cực kỳ thông minh để sắp xếp, phân bổ và tối ưu hóa thứ tự các lệnh đơn giản nhằm khai thác tối đa tài nguyên thanh ghi, đồng thời chủ động phòng ngừa các xung đột dữ liệu và xung đột điều khiển trong đường ống.
-
----
 
 ### 1.3. So sánh CISC và RISC theo các tiêu chí
 
@@ -60,8 +54,6 @@ Thời gian thực thi CPU = Số lượng lệnh x CPI (Cycles Per Instruction)
 #### 1.3.5. Ứng dụng thực tế
 - Kiến trúc CISC hiện nay đang thống trị thị trường máy tính cá nhân (PC), laptop và máy chủ (Server) hiệu năng cao với ví dụ tiêu biểu nhất là dòng kiến trúc x86/x64 do Intel và AMD phát triển (như các dòng chip Intel Core hay AMD Ryzen). 
 - Kiến trúc RISC lại chiếm thế độc tôn tại thị trường thiết bị di động, thiết bị IoT, siêu máy tính và đặc biệt là hệ thống nhúng. Các ví dụ tiêu biểu bao gồm kiến trúc ARM (được dùng trong Apple Silicon M-series, chip Snapdragon, hay các vi điều khiển phổ biến như STM32) và kiến trúc mã nguồn mở mạnh mẽ RISC-V.
-
----
 
 ### 1.4. Nêu quan điểm cá nhân: Trong bối cảnh phát triển hệ thống nhúng hiện nay, kiến trúc nào phù hợp hơn? Vì sao?
 
